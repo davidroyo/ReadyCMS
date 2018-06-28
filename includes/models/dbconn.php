@@ -8,7 +8,7 @@ class db {
 	private $database;
 
 
-	public function conn() {
+	protected function conn() {
 
 		$this->servername = "localhost";
 		$this->username = "root";

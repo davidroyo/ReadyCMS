@@ -20,13 +20,13 @@ class auth {
     }
 	
 	function login($username, $password) {
-		    $sql = "SELECT * FROM users WHERE email = htmlentities($username), password = crypt($password)";
-			$db = new db();
-		    // execute query
-            if(!$db->conn()->query($sql)fetch_array(MYSQLI_ASSOC);) {
-                echo 'User found';
-            }else {
-                echo 'User or password not found';
-            }	
+		$sql = "SELECT * FROM users WHERE email = htmlentities($username), password = crypt($password)";
+		$db = new db();
+		// execute query
+        if(!$db->conn()->query($sql)fetch_array(MYSQLI_ASSOC);) {
+            echo 'User found';
+        }else {
+            echo 'User or password not found';
+        }	
 	}
 } 

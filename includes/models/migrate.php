@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../models/dbconn.php';
+include_once './dbconn.php';
 
 class migrate extends db{
 	public function createTables() {

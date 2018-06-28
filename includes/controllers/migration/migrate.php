@@ -10,7 +10,8 @@ class migrate extends db{
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			firstname VARCHAR(30) NOT NULL,
 			lastname VARCHAR(30) NOT NULL,
-			email VARCHAR(50),
+			email VARCHAR(50) NOT NULL,
+			password nvarchar(128) NOT NULL,
 			reg_date TIMESTAMP,
 			validated BOOLEAN NOT NULL DEFAULT 0
 		);

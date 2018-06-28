@@ -30,8 +30,8 @@ class migrate extends db{
 }
 
 
-//ONLY FOR TESTING PURPOSES
-$migrate = new migrate();
-$migrate->createTables();
+//UNCOMMENT THIS IN ORDER TO EXECUTE THE MIGRATION
+//$migrate = new migrate();
+//$migrate->createTables();
 
 ?>

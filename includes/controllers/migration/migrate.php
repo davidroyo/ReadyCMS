@@ -21,7 +21,7 @@ class migrate extends db{
 		$db = new db();
 		
 		if(!$db->conn()->query($sql)) {
-			echo 'could not create table users';
+			echo 'Could not create table users, may already exist';
 		}else {
 			echo 'Created table users';
 		}

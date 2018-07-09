@@ -29,8 +29,6 @@ class user extends db{
 		VALUES ('".$this->firstname."','".$this->lastname."','".$this->email."','".$this->password."');";
 
 		if(!$conn->query($sql)) {
-			//RETURN FALSE IF COULD NOT CREATE USER
-			echo $this->firstname . $this->lastname . $this->email . "<br>";
 			return false;
 		}else{
 			//RETURN TRUE IF USER IS CREATED

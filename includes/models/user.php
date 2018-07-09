@@ -1,6 +1,6 @@
 <?php
 
-include_once 'dbconn.php';
+require 'dbconn.php';
 
 class user extends db{
 

@@ -10,8 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$user = new user();
 
-	if (//!$user->login($email, $password)
-		0 == 1) {
+	if (!$user->login($email, $password)) {
 		$_SESSION['error'] = "Email or password's incorrect";
 		header('Location: /admin/index.php');
 		return false;

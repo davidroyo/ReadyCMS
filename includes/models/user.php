@@ -19,7 +19,7 @@ class user extends db{
 		$this->password = $password;
 
 
-		//INSTANTIATING CLASS db AND DEFINING CONNECTION
+		//INSTANTIATING db CLASS
 		$db = new db();
 		$conn = $db->conn();
 
@@ -32,6 +32,34 @@ class user extends db{
 			return false;
 		}else{
 			//RETURN TRUE IF USER IS CREATED
+			return true;
+		}
+	}
+
+	public function login($email, $password) {
+
+		//DEFINING USER INFORMATION
+		$this->email = $email;
+		$this->password = $password;
+
+		//INSTANTIATING db CLASS
+		$db = new db();
+		$conn = $db->conn();
+
+
+		//EXECUTING QUERY
+		$result = $conn->query("SELECT * FROM users WHERE email = '".$this->email."'");
+
+
+		if ($result->num_rows == 0) {
+			return false;
+		}
+
+		$row = $result->fetch_assoc();
+
+		if ($this->password != $row['password']) {
+			return false;
+		}else {
 			return true;
 		}
 	} 

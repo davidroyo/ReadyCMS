@@ -8,6 +8,6 @@
 
 <body>
 	<h1>This is the main page of readycms</h1>
-	<a href="login/">Login to admin panel (backoffice)</a>
+	<a href="install/">Login to admin panel (backoffice)</a>
 </body>
 </html>

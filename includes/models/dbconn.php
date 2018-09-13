@@ -8,12 +8,12 @@ class db {
 	private $database;
 
 
-	protected function conn() {
+	public function conn($servername, $username, $password, $database) {
 
-		$this->servername = "localhost";
-		$this->username = "root";
-		$this->password = "root";
-		$this->database = "readycms";
+		$this->servername = $servername;
+		$this->username = $username;
+		$this->password = $password;
+		$this->database = $database;
 
 		//CREATING CONNECTION TO SERVER IN ORDER TO CREATE DATABASE FIRST
 		$conn = new mysqli($this->servername, $this->username, $this->password);

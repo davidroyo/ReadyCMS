@@ -2,6 +2,7 @@
 
 require '../../models/dbconn.php';
 require '../../models/migrate.php';
+require '../../models/manageData.php';
 
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();	
@@ -35,7 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$migrate->createTables();
 
-	//WRITE HERE THE CODE TO INSERT THE DATABASE CREDENTIALS INTO THE DATABASE
+	//HERE WE INSERT THE DATABASE DATA INTO THE DATABASE
+	$manage = new manage();
+
+
+	if(!$manage->insertDatabaseInfo($_SESSION['servername'],)) {
+		die('Error trying to insert data into database');
+	}
+
+
+
 
 }else {
 	echo 'The request is not valid';
